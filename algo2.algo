@@ -1,0 +1,20 @@
+
+FOR i FROM 0 TO 3 DO
+    distinct_elements[i] := array_1[i];
+END FOR;
+FOR i FROM 0 TO 3 DO
+    found := FALSE;
+    FOR j FROM 0 TO 7 DO
+        IF array_2[i] = distinct_elements[j] THEN
+            found := TRUE;
+        END IF;
+    END FOR;
+    IF NOT found THEN
+        distinct_elements[s] := array_2[i];
+        s := s + 1;
+    END IF;
+END FOR;
+sum := 0;
+FOR i FROM 0 TO s-1 DO
+    sum := sum + distinct_elements[i];
+END FOR;
